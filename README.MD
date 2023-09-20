@@ -97,3 +97,42 @@ MVC, MVT, dan MVVM adalah tiga pendekatan desain arsitektur perangkat lunak yang
    - MVVM memperkenalkan komponen "ViewModel" yang memisahkan tampilan dari model, sehingga memungkinkan pengembang UI untuk lebih mudah mengelola tampilan dan interaksi pengguna.
 
 Dalam ringkasan, ketiga pendekatan ini bertujuan untuk memisahkan konsep data, tampilan, dan logika dalam aplikasi. Pemilihan salah satu tergantung pada jenis aplikasi yang Anda kembangkan, kebutuhan pengembangan, dan kerangka kerja yang digunakan. MVC dan MVT umumnya digunakan dalam aplikasi web, sedangkan MVVM lebih umum digunakan dalam aplikasi berbasis antarmuka pengguna.
+
+tugas 3
+1. Apa perbedaan antara form POST dan form GET dalam Django?
+Method POST untuk mengirim sebuah data, sedangkan GET untuk mengambil sebuah data
+
+2.  Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
+JSON (JavaScript Object Notation) adalah format ringan untuk pertukaran data. JSON mudah dibaca dan ditulis oleh manusia serta mudah diurai dan dihasilkan oleh mesin. JSON biasanya digunakan dalam aplikasi web untuk mengirim dan menerima data melalui API.
+
+XML (eXtensible Markup Language) adalah bahasa markup yang digunakan untuk menyimpan dan mengangkut data. XML adalah format yang agak lebih kompleks dan lebih berat daripada JSON. XML mendukung penggunaan atribut dan namespace, yang membuatnya lebih fleksibel daripada JSON.
+
+HTML (Hypertext Markup Language) adalah bahasa markup yang digunakan untuk membuat dan merender dokumen web. HTML mendefinisikan struktur dan tampilan halaman web menggunakan elemen dan atribut. Berbeda dengan JSON dan XML, HTML lebih fokus pada penyajian data daripada struktur data.
+
+3.  Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
+JSON adalah format data yang ringan dan mudah dibaca oleh manusia. Ini membuatnya ideal untuk pertukaran data antara server dan klien, serta untuk debugging dan pemahaman data dengan cepat.
+
+4. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step?
+Membuat sebuah views.py yang berisi semua requirement yang diperintahkan. Setelah itu untuk melakukan create-item perlu membuat sebuah ModelForm yang nantinya akan ditampilkan pada html template. ModelForm tersebut berguna untuk menambah sebuah object Item yang nantinya dapat ditampilkan.
+
+5. ss hasil postman
+
+*html
+
+![Alt text](<Screenshot from 2023-09-20 11-47-28.png>)
+
+*json
+
+![Alt text](<Screenshot from 2023-09-20 11-47-58.png>)
+
+*xml
+
+![Alt text](<Screenshot from 2023-09-20 11-48-06.png>)
+
+*json/1
+
+![Alt text](<Screenshot from 2023-09-20 11-50-28.png>)
+
+*xml/1
+
+![Alt text](<Screenshot from 2023-09-20 11-50-50.png>)
