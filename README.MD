@@ -136,3 +136,31 @@ Membuat sebuah views.py yang berisi semua requirement yang diperintahkan. Setela
 *xml/1
 
 ![Alt text](<Screenshot from 2023-09-20 11-50-50.png>)
+
+tugas 4
+
+1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
+
+Django UserCreationForm adalah sebuah fitur yang telah disediakan oleh django dengan tujuan untuk memudahkan developer dalam membuat akun untuk pengguna nantinya. Secara umum, fitur ini digunakan dalam tahap register. Untuk contoh lebih lanjut, bisa dilihat dari kode register yang telah dibuat di views.py
+
+Kelebihan dari fitur bawaan ini adalah kemudahan dalam pembuatan user, fleksibel untuk dilakukan perubahan sesuai dengan kebutuhan developer, dan telah tersedia validasi bawaan, seperti dalam pembuatan username dan password. Namun, kekurangan dari hal ini adalah proses registrasi bawaan yang standar dan adanya keterbatasan ketika melakukan autorisasi yang terintegrasi, contohnya ketika melakukan registrasi dengan akun google dan sebagainya
+
+2. Apa perbedaan antara autentikasi dan otorisasi dalam konteks Django, dan mengapa keduanya penting?
+
+Autentikasi berhubungan dengan proses verifikasi dari data-data yang telah diinput oleh pengguna, sebagai contoh ketika melakukan login. Dengan demikian, autentikasi hanya berfokus kepada pengecekan data input dengan data-data yang telah tersimpan. Sebagai contoh, apabila autentikasi berhasil user dapat melakukan tahap selajutnya.
+
+Autorisasi berhubungan dengan izin kepada pengguna untuk mengakses fitur yang dimiliki dari aplikasi. Dengan demikian apabila user memiliki autorisasi yang sesuai maka user dapat menjlankan fitur tersebut. Sebagai contoh ketika ingin mengakses show main, pengguna harus sudah login terlebih dahulu agara terdeteksi sebagai user.
+
+Kedua hal tersebut sangat penting demi keamanan aplikasi yang dibangun oleh developer. Dengan demikian, developer perlu menerapakan kedua hal tersebut pada aplikasi yang dikembangkannya
+
+3. Apa itu cookies dalam konteks aplikasi web, dan bagaimana Django menggunakan cookies untuk mengelola data sesi pengguna?
+
+Cookies berguna untuk menyimpan data sesi pengguna. cookies pun bisa menjadi sebuah history dari pengguna tersebut. Selain itu, cookies ini akan tersimpan di device user. Hal ini bisa dicek melalui inspect element pada web browser. 
+
+4.  Apakah penggunaan cookies aman secara default dalam pengembangan web, atau apakah ada risiko potensial yang harus diwaspadai?
+
+Ya, terdapat risiko yang perlu dipahami saat menggunakan cookies, apalagi ketika cookies tersebut menyimpan data-data sensitif sehingga data-data tersebut bisa diambil oleh orang yang tidak bertanggung jawab dan menyalagunakannya. Selain itu, cookies bisa digunakan oleh pihak aplikasi sebagai data yang potensial untuk digunakan diluar persetujuan pengguna (umumnya persetujuan ini terdapat saat registrasi akun)
+ 
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+Hal pertama yang perlu kita buat adalah service untuk login, register, dan logout. Setelah itu kita membuat html yang berkaitan dengan hal-hal terseut dan juga url yang sebagai akses service-service tersebut. Setelah hal tersebut dilakukan, saya membuat cookies yang diset pada views.py dan juga autorisasi kepada service yang menurut saya penting untuk tidak diketahui selain oleh user terkait. Untuk menyelesaikan soal bonus, saya membuat service dan url yang berkaitan dengan menambah amount dan menghapus produk lalu menyambungkannya dengan html yang ada di main.py

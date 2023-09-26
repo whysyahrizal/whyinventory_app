@@ -13,9 +13,25 @@
     {% for item in items %}
         <tr>
             <td>{{item.name}}</td>
-            <td>{{item.price}}</td>
+            <td>{{item.amount}}</td>
             <td>{{item.description}}</td>
             <td>{{item.date_added}}</td>
+            <td>
+                <a href="{% url 'main:add_item_amount' id=item.id %}">
+                    <button>
+                        Add Amount
+                    </button>
+                </a>
+            </td>
+            <td>
+                <a href="{% url 'main:delete_item' id=item.id %}">
+                    <button>
+                        Delete
+                    </button>
+                </a>
+            </td>
+
+
         </tr>
     {% endfor %}
 </table>
