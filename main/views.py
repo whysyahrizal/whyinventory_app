@@ -45,6 +45,37 @@ def logout_user(request):
     response.delete_cookie('last_login')
     return response
 
+def create_Item(request):
+    form = ItemForm(request.POST or None)
+
+    if form.is_valid() and request.method == "POST":
+        Item = form.save(commit=False)
+        Item.user = request.user
+        Item.save()
+        return HttpResponseRedirect(reverse('main:show_main'))
+
+    context = {'form': form}
+    return render(request, "create_item.html", context)
+
+def edit_Item(request, id):
+    Item = Item.objects.get(pk = id)
+    form = ItemForm(request.POST or None, instance=Item)
+
+    if form.is_valid() and request.method == "POST":
+        form.save()
+        return HttpResponseRedirect(reverse('main:show_main'))
+
+    context = {'form': form}
+    return render(request, "edit_product.html", context)
+
+def delete_Item(request, id):
+    Item = Item.objects.get(pk = id)
+    Item.delete()
+    return HttpResponseRedirect(reverse('main:show_main'))
+
+def contact_us(request) :
+    return render(request, 'contact_us.html')
+
 @login_required(login_url='/login')
 def show_main(request):
     context = {

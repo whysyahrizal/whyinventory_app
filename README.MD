@@ -96,8 +96,8 @@ MVC, MVT, dan MVVM adalah tiga pendekatan desain arsitektur perangkat lunak yang
    - MVVM adalah arsitektur yang sering digunakan dalam pengembangan aplikasi berbasis antarmuka pengguna (UI), seperti aplikasi mobile dan aplikasi web yang kaya interaksi.
    - MVVM memperkenalkan komponen "ViewModel" yang memisahkan tampilan dari model, sehingga memungkinkan pengembang UI untuk lebih mudah mengelola tampilan dan interaksi pengguna.
 
-Dalam ringkasan, ketiga pendekatan ini bertujuan untuk memisahkan konsep data, tampilan, dan logika dalam aplikasi. Pemilihan salah satu tergantung pada jenis aplikasi yang Anda kembangkan, kebutuhan pengembangan, dan kerangka kerja yang digunakan. MVC dan MVT umumnya digunakan dalam aplikasi web, sedangkan MVVM lebih umum digunakan dalam aplikasi berbasis antarmuka pengguna.
-
+Dalam ringkasan, ketiga pendekatan ini bertujuan untuk memisahkan konsep data, tampilan, dan logika dalam aplikasi. Pemilihan salah satu tergantung pada jenis aplikasi yang kita kembangkan, kebutuhan pengembangan, dan kerangka kerja yang digunakan. MVC dan MVT umumnya digunakan dalam aplikasi web, sedangkan MVVM lebih umum digunakan dalam aplikasi berbasis antarmuka pengguna.
+----------------------------------------------------------------------------------------------
 tugas 3
 1. Apa perbedaan antara form POST dan form GET dalam Django?
 Method POST untuk mengirim sebuah data, sedangkan GET untuk mengambil sebuah data
@@ -136,7 +136,7 @@ Membuat sebuah views.py yang berisi semua requirement yang diperintahkan. Setela
 *xml/1
 
 ![Alt text](<Screenshot from 2023-09-20 11-50-50.png>)
-
+----------------------------------------------------------------------------------------------------
 tugas 4
 
 1. Apa itu Django UserCreationForm, dan jelaskan apa kelebihan dan kekurangannya?
@@ -164,3 +164,102 @@ Ya, terdapat risiko yang perlu dipahami saat menggunakan cookies, apalagi ketika
 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 
 Hal pertama yang perlu kita buat adalah service untuk login, register, dan logout. Setelah itu kita membuat html yang berkaitan dengan hal-hal terseut dan juga url yang sebagai akses service-service tersebut. Setelah hal tersebut dilakukan, saya membuat cookies yang diset pada views.py dan juga autorisasi kepada service yang menurut saya penting untuk tidak diketahui selain oleh user terkait. Untuk menyelesaikan soal bonus, saya membuat service dan url yang berkaitan dengan menambah amount dan menghapus produk lalu menyambungkannya dengan html yang ada di main.py
+----------------------------------------------------------------------------------------------------
+tugas 5
+
+1. Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya?
+
+jawab : Setiap elemen selector dalam CSS memiliki manfaatnya masing-masing dan cocok digunakan dalam situasi-situasi tertentu. Di bawah ini, saya akan menjelaskan manfaat dari beberapa elemen selector utama dan kapan waktu yang tepat untuk menggunakannya:
+
+a. **Universal Selector (`*`)**
+   - **Manfaat**: Memilih semua elemen di dalam dokumen HTML.
+   - **Kapan Menggunakannya**: Biasanya, kita ingin menghindari penggunaan selector ini secara luas karena dapat memengaruhi seluruh elemen di halaman web. Gunakan dengan sangat hati-hati, atau hanya ketika kita memang benar-benar memerlukannya.
+
+b. **Type Selector (Element Selector)**
+   - **Manfaat**: Memilih semua elemen dengan tipe tertentu (misalnya, `p` untuk paragraf, `h1` untuk judul level 1, `div` untuk divisi).
+   - **Kapan Menggunakannya**: Cocok digunakan ketika kita ingin mengatur gaya untuk semua elemen dengan tipe yang sama dalam dokumen kita.
+
+c. **Class Selector (`.classname`)**
+   - **Manfaat**: Memilih semua elemen yang memiliki atribut `class` tertentu.
+   - **Kapan Menggunakannya**: Sangat berguna ketika kita ingin memberikan gaya yang sama untuk beberapa elemen yang memiliki kelas yang sama.
+
+d. **ID Selector (`#idname`)**
+   - **Manfaat**: Memilih elemen dengan atribut `id` tertentu.
+   - **Kapan Menggunakannya**: Berguna ketika kita ingin memberikan gaya khusus untuk satu elemen tertentu dalam halaman. ID seharusnya unik dalam satu halaman.
+
+e. **Descendant Selector (Space)**
+   - **Manfaat**: Memilih elemen yang menjadi turunan dari elemen lain.
+   - **Kapan Menggunakannya**: Berguna untuk mengatur gaya elemen-elemen dalam konteks tertentu, seperti mengubah gaya semua paragraf di dalam sebuah div.
+
+f. **Child Selector (`>`)**
+   - **Manfaat**: Memilih elemen yang merupakan anak langsung dari elemen lain.
+   - **Kapan Menggunakannya**: Berguna ketika kita ingin mengubah gaya elemen yang merupakan anak langsung dari elemen lain, tanpa mempengaruhi elemen-elemen yang lebih dalam pada struktur dokumen.
+
+g. **Adjacent Sibling Selector (`+`)**
+   - **Manfaat**: Memilih elemen yang merupakan saudara sejajar (sibling) langsung dari elemen lain.
+   - **Kapan Menggunakannya**: Berguna ketika kita ingin mengubah gaya elemen yang berada tepat setelah elemen lain yang sama di dalam dokumen.
+
+h. **General Sibling Selector (`~`)**
+   - **Manfaat**: Memilih semua elemen yang merupakan saudara sejajar (sibling) dari elemen lain.
+   - **Kapan Menggunakannya**: Berguna ketika kita ingin mengubah gaya semua elemen yang memiliki hubungan sibling dengan elemen lain.
+
+
+2. Jelaskan HTML5 tag yang kamu ketahui!
+
+Jawab : berikut tag HTML5 yang saya ketahui
+
+a. `<header>`: Bagian atas halaman, berisi judul, logo, atau elemen header lainnya.
+
+b. `<nav>`: Digunakan untuk tautan menu navigasi.
+
+c. `<main>`: Menunjukkan konten utama dalam halaman.
+
+d. `<article>`: Mengelompokkan konten yang mandiri, seperti artikel atau posting blog.
+
+e. `<section>`: Mengelompokkan konten yang terkait atau berhubungan dalam halaman.
+
+f. `<aside>`: Digunakan untuk konten terkait, seperti sidebar.
+
+g. `<figure>` dan `<figcaption>`: Untuk menyertakan media dan keterangan.
+
+h. `<footer>`: Bagian bawah halaman, biasanya berisi informasi kontak atau hak cipta.
+
+i. `<video>` dan `<audio>`: Untuk menampilkan video dan audio di halaman web.
+
+j. `<canvas>`: Untuk membuat grafis dan animasi menggunakan JavaScript.
+
+k. Input Jenis Baru: Jenis input seperti `<input type="email">` dan `<input type="date">` untuk validasi dan input data.
+
+l. `<details>` dan `<summary>`: Membuat daftar detail yang dapat dijatuhkan.
+
+m. `<progress>`: Menunjukkan kemajuan dalam proses.
+
+n. `<meter>`: Menggambarkan pengukuran dalam bentuk grafis.
+
+o. `<datalist>`: Memberikan daftar pilihan untuk input pengguna.
+
+p. `<template>`: Menyembunyikan kode HTML yang dapat digunakan kembali.
+
+3. Jelaskan perbedaan antara margin dan padding.
+
+jawab : Margin adalah jarak antara elemen dan elemen-elemen di sekitarnya, sementara padding adalah jarak antara konten elemen dan batas elemen itu sendiri. Margin mengatur ruang di luar elemen, sedangkan padding mengatur ruang di sekitar konten dalam elemen.
+
+4. Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+
+jawab : 
+
+Perbedaan antara Tailwind CSS dan Bootstrap:
+
+**Tailwind CSS**:
+- **Pendekatan Utility-First**: Menggunakan banyak kelas kecil untuk membangun tampilan sesuai kebutuhan.
+- **Customisasi Tinggi**: Dapat disesuaikan secara ekstensif dan cocok untuk proyek dengan desain yang unik.
+- **Ukuran Kecil**: Lebih ringan karena hanya menghasilkan kode CSS yang digunakan.
+
+**Bootstrap**:
+- **Pendekatan Komponen**: Menyediakan komponen siap pakai seperti navbar dan kartu.
+- **Desain Terbukti**: Cocok untuk proyek dengan tampilan yang konsisten dan telah terbukti.
+- **Kustomisasi Terbatas**: Kustomisasi lebih rumit daripada Tailwind.
+
+5.  Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+jawab : 

@@ -1,18 +1,76 @@
-
 {% block content %}
-<h1>Add New Item</h1>
+<style>
 
-<form method="POST">
-    {% csrf_token %}
-    <table>
-        {{ form.as_table }}
-        <tr>
-            <td></td>
-            <td>
-                <input type="submit" value="Add Item"/>
-            </td>
-        </tr>
-    </table>
-</form>
+    .container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        border: 1px solid #dddfe2;
+        border-radius: 8px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
 
-{% endblock %}
+    h1 {
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        padding: 12px;
+        border-bottom: 1px solid #dddfe2;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .input-container {
+        text-align: center;
+    }
+
+    .input-container input {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    .input-container .submit-button {
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 12px 20px;
+        cursor: pointer;
+    }
+
+    .input-container .submit-button:hover {
+        background-color: #0056b3;
+    }
+    
+</style>
+
+<div class="container">
+    <h1>Add New Item</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        <div class="input-container">
+            <input type="text" name="name" placeholder="Name">
+            <input type="text" name="amount" placeholder="Amount">
+            <input type="text" name="description" placeholder="Description">
+            <button class="submit-button" type="submit">Add Item</button>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}

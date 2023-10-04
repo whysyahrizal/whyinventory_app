@@ -1,14 +1,135 @@
-<h1>WHYINVENTORY App</h1>
+{% extends 'base.html' %}
 
-<h5>Name: </h5>
-<p>{{ name }}<p>
-<h5>Class: </h5>
-<p>{{ class }}<p>
+{% block content %}
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        font-family: Arial, sans-serif;
+    }
 
-<h5>Sesi terakhir login: {{ last_login }}</h5>
+    .navbar {
+        background-color: #1DA1F2; 
+        padding: 10px 0;
+    }
 
-<a href="{% url 'main:logout' %}">
-    <button>
-        Logout
-    </button>
-</a>
+    .navbar-brand {
+        color: #fff;
+        font-size: 24px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 20px;
+        background-color: #fff; 
+        border: 1px solid #dddfe2;
+        border-radius: 0;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    th, td {
+        padding: 12px;
+        border-bottom: 1px solid #dddfe2;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .edit-button, .delete-button {
+        background-color: #1DA1F2; 
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 8px 12px;
+        cursor: pointer;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .edit-button:hover, .delete-button:hover {
+        background-color: #0E71A9; 
+    }
+
+    .add-new-button {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .logout-button {
+        color: #1DA1F2;
+        text-decoration: none;
+        font-weight: bold;
+        float: right; 
+        margin-top: 10px;
+        margin-right: 20px;
+    }
+
+    .navbar-link {
+    color: #000; 
+    text-decoration: none;
+    margin-left: 10px; 
+}
+
+</style>
+
+<div class="navbar">
+    <div class="container">
+        <a class="navbar-brand" href="#">WHY INVENTORY</a>
+        <a href="{% url 'main:create_item' %}" class="navbar-link">Add Item</a>
+        <a href="{% url 'main:show_item' %}" class="navbar-link">Show Item</a>
+        <a href="{% url 'main:contact_us' %}" class="navbar-link">Contact Us</a>
+        <a href="{% url 'main:logout' %}" class="logout-button">Log Out</a>
+    </div>
+</div>
+
+<div class="container">
+    <h1>WHY INVENTORY</h1>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Amount</th>
+            <th>Description</th>
+            <th>Date Added</th>
+            <th>Actions</th>
+        </tr>
+
+        {% for Item in Items %}
+            <tr>
+                <td>{{ Item.name }}</td>
+                <td>{{ Item.amount|floatformat:2 }} IDR</td>
+                <td>{{ Item.description }}</td>
+                <td>{{ Item.date_added }}</td>
+                <td>
+                    <a href="{% url 'main:edit_Item' Item.pk %}" class="edit-button">Edit</a>
+                    <a href="{% url 'main:delete_Item' Item.pk %}" class="delete-button">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </table>
+
+    <h5>Sesi terakhir login: {{ last_login }}</h5>
+
+    <a href="{% url 'main:create_item' %}" class="add-new-button">
+        <button>
+            Add New Item
+        </button>
+    </a>
+</div>
+
+{% endblock content %}

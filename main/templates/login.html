@@ -1,12 +1,70 @@
-
-{% block meta %}
-    <title>Login</title>
-{% endblock meta %}
-
 {% block content %}
 
-<div class = "login">
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
 
+    .login {
+        max-width: 400px;
+        padding: 20px;
+        background-color: #f4f4f4;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .login h1 {
+        text-align: center;
+        color: #333;
+    }
+
+    .login table {
+        width: 100%;
+    }
+
+    .login td {
+        padding: 10px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    .login_btn {
+        width: 100%;
+        padding: 10px;
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .login_btn:hover {
+        background-color: #0056b3;
+    }
+
+    .login a {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        color: #007BFF;
+        text-decoration: none;
+    }
+
+    .login a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<div class="login">
     <h1>Login</h1>
 
     <form method="POST" action="">
@@ -38,7 +96,6 @@
     {% endif %}     
         
     Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a>
-
 </div>
 
 {% endblock content %}
