@@ -262,4 +262,13 @@ Perbedaan antara Tailwind CSS dan Bootstrap:
 
 5.  Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
 
-jawab : 
+jawab : pada ceklist 1 saya memulainya dari login.html dan register.html dimana saya mendesain tampilan  login ke centre agar terkesan elegan dan minimalis, ditambah dengan efek hover pada button ketika kursor diarahkan ke bagian login. adapun desain yang saya kerjakan menggunakan css biasa. hasilnya sebagai berikut : 
+
+/home/wahyu-syahrizal/Videos/Screencasts/Screencast from 2023-10-04 20-48-03.webm
+
+![Alt text](<Screenshot from 2023-10-04 20-49-31.png>)
+ ![Alt text](<Screenshot from 2023-10-04 20-49-39.png>)
+
+pada ceklis 2, saya mengedit bagian show_item.html menggunakan approach lain seperti card, adapun hasilnya seperti ini. 
+![Alt text](<Screenshot from 2023-09-20 13-31-02.png>)
+
