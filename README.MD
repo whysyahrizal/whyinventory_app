@@ -270,5 +270,5 @@ jawab : pada ceklist 1 saya memulainya dari login.html dan register.html dimana 
  ![Alt text](<Screenshot from 2023-10-04 20-49-39.png>)
 
 pada ceklis 2, saya mengedit bagian show_item.html menggunakan approach lain seperti card, adapun hasilnya seperti ini. 
-![Alt text](<Screenshot from 2023-09-20 13-31-02.png>)
+![Alt text](<Screenshot from 2023-10-04 20-40-51.png>)
 
