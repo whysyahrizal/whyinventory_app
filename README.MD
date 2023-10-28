@@ -271,4 +271,66 @@ jawab : pada ceklist 1 saya memulainya dari login.html dan register.html dimana 
 
 pada ceklis 2, saya mengedit bagian show_item.html menggunakan approach lain seperti card, adapun hasilnya seperti ini. 
 ![Alt text](<Screenshot from 2023-10-04 20-40-51.png>)
+----------------------------------------------------------------------------------------------------
+tugas 6
 
+1. Jelaskan perbedaan antara asynchronous programming dengan synchronous programming.
+
+jawab:
+
+Synchronous programming menggunakan arsitektur blocking(menunggu satu per satu request) sedangkan asynchronous tidak.
+
+2. Dalam penerapan JavaScript dan AJAX, terdapat penerapan paradigma event-driven programming. Jelaskan maksud dari paradigma tersebut dan sebutkan salah satu contoh penerapannya pada tugas ini.
+
+jawab:
+
+Event-driven programming adalah kondisi dimana logika akan dijalankan ketika pengguna atau user telah melakukan suatu aksi seperti klik mouse dan juga input keyboard. Salah satu dari contoh yang ada di tugas ini adalah ketika kita melakukan submit form.
+
+3. Jelaskan penerapan asynchronous programming pada AJAX.
+
+jawab:
+
+Ajax menggunakan Fetch API, yang akan mengembalikan promise yang merupakan asynchronous programming.
+
+4. Pada PBP kali ini, penerapan AJAX dilakukan dengan menggunakan Fetch API daripada library jQuery. Bandingkanlah kedua teknologi tersebut dan tuliskan pendapat kamu teknologi manakah yang lebih baik untuk digunakan.
+
+Fetch API:
+
+Kelebihan:
+
+Standar Web: Fetch API adalah bagian dari standar ECMAScript dan menjadi bagian integral dari bahasa JavaScript modern. Ini berarti kita tidak perlu mengunduh atau memasang pustaka tambahan, yang mengurangi overhead dan memudahkan pengembangan aplikasi web yang ringan.
+
+Promises: Fetch API mengembalikan promise, yang memungkinkan pengelolaan asynchronous code yang lebih bersih dan mudah dibaca. Kita dapat menggabungkan then, catch, dan finally untuk mengelola respons dan kesalahan.
+
+Fleksibilitas: Fetch API memberikan lebih banyak kontrol terhadap permintaan HTTP, termasuk pengaturan header dan metode yang disesuaikan. Kita dapat melakukan permintaan GET, POST, PUT, DELETE, dan lain-lain.
+
+Performa: Fetch API cenderung lebih cepat dalam beberapa situasi karena ia dirancang untuk menjaga performa yang baik.
+
+Kelemahan:
+
+Kurva Pembelajaran: Fetch API memerlukan pemahaman yang kuat tentang promise dan asynchronous programming. Ini bisa membingungkan bagi pengembang yang baru mengenal konsep ini.
+
+Kompatibilitas Browser: Meskipun Fetch API didukung di semua browser modern, beberapa versi browser yang lebih lama mungkin tidak mendukungnya. Dalam kasus ini, kita mungkin perlu menggunakan polifil atau alternatif.
+
+jQuery:
+
+Kelebihan:
+
+Sederhana: jQuery menyederhanakan AJAX dengan fungsi-fungsi yang mudah digunakan seperti $.ajax(), $.get(), dan $.post(). Ini membuat pengembangan lebih cepat dan mudah dipahami.
+
+Kompatibilitas Browser: jQuery sangat kompatibel dengan berbagai browser, termasuk browser lama. Ini mengurangi kekhawatiran tentang kompatibilitas lintas browser.
+
+Plugin Ekosistem: Terdapat banyak plugin jQuery yang dapat digunakan untuk menangani berbagai tugas dan interaksi di situs web.
+
+Kelemahan:
+
+Overhead: jQuery adalah pustaka yang memadatkan banyak fitur, yang berarti kita mungkin mengunduh lebih banyak kode daripada yang benar-benar kita perlukan. Ini bisa mempengaruhi performa.
+
+Masa Depan: jQuery mungkin tidak menjadi pilihan yang terbaik untuk aplikasi web modern karena sebagian besar fiturnya telah diadopsi oleh JavaScript standar, seperti DOM manipulation dan event handling.
+
+Untuk proyek-proyek baru, terutama yang berfokus pada modernitas dan performa, menggunakan Fetch API adalah pilihan yang lebih baik. Ini memungkinkan Anda mengambil keuntungan dari standar web dan memungkinkan pengembangan yang lebih bersih dan mudah dipelajari. Namun, jika Anda mengelola proyek yang sudah ada dengan jQuery atau jika Anda memiliki kebutuhan khusus yang lebih baik dipenuhi oleh jQuery (misalnya, kompatibilitas lintas browser yang sangat luas), maka jQuery tetap relevan. Dalam banyak kasus, menggunakan Fetch API adalah pilihan yang lebih modern dan efisien.
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+Pertama-tama, saya mengubah tabel saya yang sebelumnya menggunakan loop untuk mengisi tabel tersebut menjadi tabel kosong. Lalu untuk mengambil item, saya menggunakan AJAX GET dengan melakukan fetch api ke endpoint yang sudah saya buat.
+Untuk melakukan AJAX POST, pertama-tama saya membuat modal yang ber pada html, lalu saya menambahkan javascript untuk membuka dan menutup modal. Setelah itu saya membuat endpoint post dan juga javascript untuk melakukan post dan juga merefresh tabel secara otomatis. Untuk melakukan AJAX Delete, saya menambahkan javascript untuk ketika tombol delete ditekan, akan melakukan fetch ke endpoint delete yang telah dibuat sebelumnya, dan juga menaruh csrftoken di dalam header supaya bisa melakukan aksi delete item.

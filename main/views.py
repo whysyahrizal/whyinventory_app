@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.core import serializers
 from main.models import Item
 from main.forms import ItemForm
@@ -57,9 +57,9 @@ def create_Item(request):
     context = {'form': form}
     return render(request, "create_item.html", context)
 
-def edit_Item(request, id):
-    Item = Item.objects.get(pk = id)
-    form = ItemForm(request.POST or None, instance=Item)
+def edit_item(request, id):
+    item = Item.objects.get(pk = id)
+    form = ItemForm(request.POST or None, instance=item)
 
     if form.is_valid() and request.method == "POST":
         form.save()
@@ -78,10 +78,12 @@ def contact_us(request) :
 
 @login_required(login_url='/login')
 def show_main(request):
+    item = Item.objects.filter(user=request.user)
     context = {
         'name': request.user.username,
         'class': 'PBP A',
         'last_login': request.COOKIES['last_login'],
+        'Items': item
     }
 
     return render(request, "main.html", context)
@@ -136,3 +138,25 @@ def delete_item(request,id):
     data = get_object_or_404(Item, pk=id)
     data.delete()
     return HttpResponseRedirect(reverse('main:show_item'))
+
+@login_required(login_url='/login')
+def get_item(request):
+    items = Item.objects.filter(user=request.user)
+    data = [{'id': item.id, 'name': item.name, 'amount': item.amount, 'description': item.description, 'date_added': item.date_added} for item in items]
+    return JsonResponse(data, safe=False)
+
+@login_required(login_url='/login')
+def create_item_ajax(request):
+    if request.method == 'POST':
+        form = ItemForm(request.POST)
+
+        if form.is_valid():
+            item = form.save(commit=False)
+            item.user = request.user
+            item.save()
+            return JsonResponse({'success': True})
+        else:
+            errors = form.errors.as_json()
+            return JsonResponse({'success': False, 'errors': errors})
+    else:
+        return JsonResponse({'success': False, 'errors': 'Invalid request method'})
