@@ -334,3 +334,72 @@ Untuk proyek-proyek baru, terutama yang berfokus pada modernitas dan performa, m
 
 Pertama-tama, saya mengubah tabel saya yang sebelumnya menggunakan loop untuk mengisi tabel tersebut menjadi tabel kosong. Lalu untuk mengambil item, saya menggunakan AJAX GET dengan melakukan fetch api ke endpoint yang sudah saya buat.
 Untuk melakukan AJAX POST, pertama-tama saya membuat modal yang ber pada html, lalu saya menambahkan javascript untuk membuka dan menutup modal. Setelah itu saya membuat endpoint post dan juga javascript untuk melakukan post dan juga merefresh tabel secara otomatis. Untuk melakukan AJAX Delete, saya menambahkan javascript untuk ketika tombol delete ditekan, akan melakukan fetch ke endpoint delete yang telah dibuat sebelumnya, dan juga menaruh csrftoken di dalam header supaya bisa melakukan aksi delete item.
+
+Tugas 7
+
+## Pertanyaan
+1. Apa perbedaan utama antara stateless dan stateful widget dalam konteks pengembangan aplikasi Flutter?
+
+Perbedaan antara stateless dengan stateful widget adalah stateless widget tidak dapat berubah-rubah atau tidak dinamis sehingga jika sudah dibuat, maka tidak ada perubahan data yang bisa dilakukan secara dinamis seperti perubahan data tabel, mengambil input pengguna dan semacamnya.
+
+2. Sebutkan seluruh widget yang kamu gunakan untuk menyelesaikan tugas ini dan jelaskan fungsinya masing-masing.
+
+Widget yang digunakan pada tugas ini ada widget wrapper yang berguna untuk supaya pagenya bisa di scroll, widget text untuk menampilkan tulisan dan widget untuk menampilkan children secara vertikal.
+
+3. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial)
+
+Untuk mengimplementasikan checklist diatas, pertama-tama saya membuat class HomePage yang merupakan stateless widget dan juga membuat class Inventory yang memiliki atribut nama dan icon. Lalu saya membuat class Inventory card yang berguna sebagai card yang bisa dipencet seperti button, dan membuat snack bar dengan menerapkan onTap di dalam cardnya. Lalu pada class homepage saya membuat list dari inventory untuk menyimpan semua card atau button yang diinginkan. Lalu pada build di homepage saya membuat pagenya dan memunculkan card yang sudah dibuat tadi.
+
+Tugas 8
+
+## Pertanyaan
+
+1. Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement(), disertai dengan contoh mengenai penggunaan kedua metode tersebut yang tepat!
+
+Navigator.push(): Digunakan untuk menambahkan halaman baru ke dalam tumpukan (stack) halaman. Ketika halaman baru ditambahkan, pengguna dapat kembali ke halaman sebelumnya dengan tombol "back" atau tindakan serupa.
+
+Contoh Penggunaan:
+Navigator.push(
+  context,
+  MaterialPageRoute(builder: (context) => NextPage()),
+);
+
+Navigator.pushReplacement(): Digunakan untuk menambahkan halaman baru ke dalam tumpukan halaman dan menghapus semua halaman di atasnya dalam tumpukan. Ini berguna ketika kita ingin mengganti halaman yang saat ini ditampilkan dengan halaman baru.
+
+Contoh Penggunaan:
+Navigator.pushReplacement(
+  context,
+  MaterialPageRoute(builder: (context) => NewPage()),
+);
+
+2. Jelaskan masing-masing layout widget pada Flutter dan konteks penggunaannya masing-masing!
+
+Container: Menggabungkan sejumlah properti tata letak dan dekorasi untuk membuat kotak yang dapat disesuaikan. Digunakan untuk menampung elemen-elemen lain atau sebagai wadah.
+
+Column: Menyusun widget secara vertikal, sehingga sesuai untuk menyusun widget-widget dalam satu kolom.
+
+Row: Menyusun widget secara horizontal, cocok untuk menyusun widget dalam satu baris.
+
+ListView: Menampilkan daftar widget dala bentuk list, baik secara vertikal atau horizontal.
+
+GridView: Menyusun widget dalam bentuk grid (kotak).
+
+Stack: Menumpuk widget di atas satu sama lain, memungkinkan penempatan dan penataan yang bebas.
+
+3. Sebutkan apa saja elemen input pada form yang kamu pakai pada tugas kali ini dan jelaskan mengapa kamu menggunakan elemen input tersebut!
+
+TextFormField: Digunakan untuk memasukkan teks atau string. Kita menggunakannya untuk input seperti nama, jumlah, dan deskripsi. Saya menggunakan textformfield karena input yang diterima pada form berupa teks dan mudah untuk melakukan validasi.
+
+4. Bagaimana penerapan clean architecture pada aplikasi Flutter?
+Clean Architecture pada Flutter dapat diimplementasikan dengan mengorganisir kode menjadi lapisan-lapisan, seperti:
+
+Domain Layer: Berisi aturan bisnis, entitas, dan objek nilai yang bersih dari dependensi luar.
+
+Data Layer: Menangani sumber daya eksternal dan akses data, seperti API, database, dll.
+
+Presentation Layer: Menangani antarmuka pengguna, widget, dan logika presentasi.
+
+5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial)
+
+Untuk mengimplementasikan checklist diatas, pertama-tama saya membuat class AddItemForm yang merupakan stateless widget dan juga membuat class Products yang memiliki atribut name, amount, dan description. Di dalam class tersebut saya membuat form dan 3 texteditingcontroller serta melakukan validasi. Lalu saya membuat tombol supaya bisa mengarah ke page tersebut dengan memberikan fungsi pada ontap untuk tombol tambah item. Lalu saya membuat class drawer dan mengimplementasikannya ke semua page yang ada. 
+
